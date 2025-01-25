@@ -1,4 +1,4 @@
-bad_register = {
+unsuccessful_register_new_user = {
   "$schemas": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
@@ -11,7 +11,7 @@ bad_register = {
   ]
 }
 
-get_method = {
+get_info_about_user = {
   "$schemas": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
@@ -64,7 +64,7 @@ get_method = {
   ]
 }
 
-post_method = {
+add_user = {
   "$schemas": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
@@ -89,7 +89,7 @@ post_method = {
   ]
 }
 
-put_method = {
+change_data_user = {
   "$schemas": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
@@ -110,7 +110,7 @@ put_method = {
   ]
 }
 
-register = {
+register_new_user = {
   "$schemas": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
