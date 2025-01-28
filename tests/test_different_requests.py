@@ -33,10 +33,12 @@ def test_get_false_info():
 def test_update():
     response = requests.put("https://reqres.in/api/users/2", data={"name": "morpheus", "job": "mr.flex"})
     response_data = response.json()
-    assert response.status_code == 200, f"Возникла ошибка:{response.text}"
+    assert response.status_code == 200, f"Возникла ошибка: {response.text}"
     assert response_data["name"] == "morpheus", f"Ожидалось имя 'morpheus', но получено {response_data['name']}"
     assert response_data["job"] == "mr.flex", f"Ожидалась работа 'mr.flex', но получена {response_data['job']}"
-    assert response_data == {}, f"Ожидался пустой ответ, но получен: {response.text}"
+    expected_keys = {"name", "job", "updatedAt"}
+    assert expected_keys.issubset(
+        response_data.keys()), f"Ожидалось наличие ключей {expected_keys}, но получены: {response_data.keys()}"
     validate(response_data, change_data_user)
 
 
